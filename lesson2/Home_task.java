@@ -1,6 +1,5 @@
 package lesson2;
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class Home_task {
