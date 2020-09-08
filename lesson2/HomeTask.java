@@ -1,6 +1,5 @@
 package lesson2;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -9,25 +8,25 @@ public class HomeTask {
         Scanner input = new Scanner(System.in);
 
         //1
-        //System.out.println("Ответ: " + taskFirst(input));
+        System.out.println("Ответ: " + taskFirst(input));
 
         //2
-        //System.out.println("Ответ: " + taskSecond(input));
+        System.out.println("Ответ: " + taskSecond(input));
 
         //3
-        //System.out.println("Ответ: " + taskThird(input));
+        System.out.println("Ответ: " + taskThird(input));
 
         //4
-        //System.out.println("Ответ: " + taskFourth(input));
+        System.out.println("Ответ: " + taskFourth(input));
 
         //5
-        //System.out.println("Ответ: " + taskFifth(input));
+        System.out.println("Ответ: " + taskFifth(input));
 
         //6
-        //System.out.println("Ответ: " + taskSixth(input));
+        System.out.println("Ответ: " + taskSixth(input));
 
         //7
-        //System.out.println("Ответ: " + taskSeventh(input, 10));
+        System.out.println("Ответ: " + taskSeventh(input, 10));
 
         //8
         System.out.println("Ответ: " + taskEighth());
@@ -35,50 +34,8 @@ public class HomeTask {
         //9
         System.out.println("Ответ: " + taskNinth());
 
-
-        /*
-
-        //9
-        System.out.println("9. Работа с массивом. [15,10,51,-6,-5,3,-10,-34,0,32,56,-12,24,-52]. Переставить элементы массива в обратном порядке. Вывести результат в консоль");
-        int[] arr9 = {15, 10, 51, -6, -5, 3, -10, -34, 0, 32, 56, -12, 24, -52};
-        int buff;
-        for (int i = 0; i < arr9.length; i++) {
-            buff = arr9[i];
-            arr9[i] = arr9[arr9.length - i - 1];
-            arr9[arr9.length - i - 1] = buff;
-            if (i == arr9.length / 2) {
-                break;
-            }
-        }
-        System.out.print("Массив наоборот: ");
-        for (int a : arr9) {
-            System.out.print(a + " ");
-        }
-        System.out.println("");
-
         //10
-        System.out.println("10. Работа с массивом. [15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52]. Переместить нули в конец массива. Вывести результат в консоль");
-        int[] arr10 = {15, 10, 0, -6, -5, 3, 0, -34, 0, 32, 56, 0, 24, -52};
-        int[] temp_arr = new int[arr10.length];
-        int index = arr10.length, z = 0, y = 1;
-        for (int i = 0; i < arr10.length; i++) {
-            if (arr10[i] != 0) {
-                temp_arr[z] = arr10[i];
-                z++;
-            } else {
-                temp_arr[arr10.length - y] = 0;
-                y++;
-            }
-        }
-
-        System.out.print("Ответ: ");
-        for (int a : temp_arr) {
-            System.out.print(a + " ");
-        }
-        System.out.println();
-
-        */
-
+        System.out.println("Ответ: " + taskTenth());
     }
 
     //1
@@ -131,17 +88,13 @@ public class HomeTask {
     public static int taskFifth(Scanner input) {
         System.out.println("5. Ввести три целых числа с консоли. Вывести на экран наименьшее из них.");
         int[] arr = new int[3];
-        int num, result = 0;
+        int result = 0;
         for (int i = 0; i < arr.length; i++) {
             System.out.print("Введите " + (i + 1) + "е число и нажмите [Enter]: ");
             arr[i] = input.nextInt();
         }
         for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] < arr[i + 1]) {
-                result = arr[i];
-            } else {
-                result = arr[i + 1];
-            }
+            result = Math.min(arr[i], arr[i + 1]);
         }
         return result;
     }
@@ -151,7 +104,7 @@ public class HomeTask {
         System.out.println("6. Ввести целое число в консоли. Вывести его строку-описание вида «отрицательное четное число», «нулевое число», «положительное нечетное число» и т. д.");
         System.out.print("Введите число и нажмите [Enter]: ");
         int num = input.nextInt();
-        String result = "";
+        String result;
 
         if (num % 2 == 0) {
             result = "четное";
@@ -176,7 +129,7 @@ public class HomeTask {
         System.out.print("Введите код города и нажмите [Enter]: ");
         int num = input.nextInt();
         double costOneMinute;
-        String result = "";
+        String result;
         switch (num) {
             case 905: //Москва 4.15
                 costOneMinute = 4.15;
@@ -248,6 +201,25 @@ public class HomeTask {
         }
 
         return Arrays.toString(inputArray);
+    }
+
+    //10
+    public static String taskTenth() {
+        System.out.println("10. Работа с массивом. [15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52]. Переместить нули в конец массива. Вывести результат в консоль");
+        int[] inputArray = {15, 10, 0, -6, -5, 3, 0, -34, 0, 32, 56, 0, 24, -52};
+        int[] outputArray = new int[inputArray.length];
+        int z = 0, y = 1;
+        for (int a : inputArray) {
+            if (a != 0) {
+                outputArray[z] = a;
+                z++;
+            } else {
+                outputArray[inputArray.length - y] = 0;
+                y++;
+            }
+        }
+
+        return Arrays.toString(outputArray);
     }
 
 }
