@@ -1,5 +1,7 @@
 package lesson2;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class HomeTask {
@@ -22,66 +24,19 @@ public class HomeTask {
         //System.out.println("Ответ: " + taskFifth(input));
 
         //6
-        System.out.println("Ответ: " + taskSixth(input));
+        //System.out.println("Ответ: " + taskSixth(input));
+
+        //7
+        //System.out.println("Ответ: " + taskSeventh(input, 10));
+
+        //8
+        System.out.println("Ответ: " + taskEighth());
+
+        //9
+        System.out.println("Ответ: " + taskNinth());
 
 
         /*
-
-        //7
-        System.out.println("7. Написать программу, вычисляющую стоимость 10 минутного междугороднего разговора в зависимости от кода города.");
-        System.out.print("Введите код города и нажмите [Enter]: ");
-        num = input.nextInt();
-        double min_cost;
-        switch (num) {
-            case 905: //Москва 4.15
-                min_cost = 4.15;
-                System.out.println("Москва. Стоимость разговора: " + min_cost * 10);
-                break;
-            case 194: //Ростов 1.94
-                min_cost = 1.94;
-                System.out.println("Ростов. Стоимость разговора: " + min_cost * 10);
-                break;
-            case 491: //Краснодар 2.69
-                min_cost = 2.69;
-                System.out.println("Краснодар. Стоимость разговора: " + min_cost * 10);
-                break;
-            case 800: //Киров 5.00
-                min_cost = 5.00;
-                System.out.println("Киров. Стоимость разговора: " + min_cost * 10);
-                break;
-            default:
-                System.out.println("Неизвестный код города");
-        }
-
-        //8
-        System.out.println("8. Работа с массивом [1,-10,5,6,45,23,-45,-34,0,32,56,-1,2,-2]. (максимальное | сумму положительных | сумму четных отрицательных | количество положительных | avg отрицательных");
-        int[] arr8 = {1, -10, 5, 6, 45, 23, -45, -34, 0, 32, 56, -1, 2, -2};
-        int max = arr8[0], sum_pos = 0, sum_even_neg = 0, num_pos = 0, num_neg = 0;
-        double avg_neg = 0;
-        for (int a : arr8) {
-            if (a > max) {
-                max = a;
-            }
-            if (a > 0) {
-                sum_pos += a;
-                num_pos++;
-            } else {
-                num_neg++;
-                avg_neg += a;
-            }
-            if (a < 0 && a % 2 == 0) {
-                sum_even_neg += a;
-            }
-
-        }
-        avg_neg /= num_neg;
-
-        System.out.println("Ответ:");
-        System.out.println("максимальное значение: " + max);
-        System.out.println("сумма положительных элементов: " + sum_pos);
-        System.out.println("сумма четных отрицательных элементов: " + sum_even_neg);
-        System.out.println("количество положительных элементов: " + num_pos);
-        System.out.println("среднее арифметическое отрицательных элементов: " + avg_neg);
 
         //9
         System.out.println("9. Работа с массивом. [15,10,51,-6,-5,3,-10,-34,0,32,56,-12,24,-52]. Переставить элементы массива в обратном порядке. Вывести результат в консоль");
@@ -213,6 +168,86 @@ public class HomeTask {
         }
         result = num + " - " + result + " число";
         return result;
+    }
+
+    //7
+    public static String taskSeventh(Scanner input, int amountOfMinutes) {
+        System.out.println("7. Написать программу, вычисляющую стоимость " + amountOfMinutes + " минутного междугороднего разговора в зависимости от кода города.");
+        System.out.print("Введите код города и нажмите [Enter]: ");
+        int num = input.nextInt();
+        double costOneMinute;
+        String result = "";
+        switch (num) {
+            case 905: //Москва 4.15
+                costOneMinute = 4.15;
+                result = "Москва. Стоимость разговора: " + costOneMinute * amountOfMinutes;
+                break;
+            case 194: //Ростов 1.94
+                costOneMinute = 1.94;
+                result = "Ростов. Стоимость разговора: " + costOneMinute * amountOfMinutes;
+                break;
+            case 491: //Краснодар 2.69
+                costOneMinute = 2.69;
+                result = "Краснодар. Стоимость разговора: " + costOneMinute * amountOfMinutes;
+                break;
+            case 800: //Киров 5.00
+                costOneMinute = 5.00;
+                result = "Киров. Стоимость разговора: " + costOneMinute * amountOfMinutes;
+                break;
+            default:
+                result = "Неизвестный код города";
+        }
+        return result;
+    }
+
+    //8
+    public static String taskEighth() {
+        System.out.println("8. Работа с массивом [1,-10,5,6,45,23,-45,-34,0,32,56,-1,2,-2]. (максимальное | сумму положительных | сумму четных отрицательных | количество положительных | avg отрицательных");
+        int[] inputArray = {1, -10, 5, 6, 45, 23, -45, -34, 0, 32, 56, -1, 2, -2};
+        int max = inputArray[0], sum_pos = 0, sum_even_neg = 0, num_pos = 0, num_neg = 0;
+        double avg_neg = 0;
+        String result = "\n";
+        for (int a : inputArray) {
+            if (a > max) {
+                max = a;
+            }
+            if (a > 0) {
+                sum_pos += a;
+                num_pos++;
+            } else {
+                num_neg++;
+                avg_neg += a;
+            }
+            if (a < 0 && a % 2 == 0) {
+                sum_even_neg += a;
+            }
+
+        }
+        avg_neg /= num_neg;
+        result += "максимальное значение: " + max + "\n";
+        result += "сумма положительных элементов: " + sum_pos + "\n";
+        result += "сумма четных отрицательных элементов: " + sum_even_neg + "\n";
+        result += "количество положительных элементов: " + num_pos + "\n";
+        result += "среднее арифметическое отрицательных элементов: " + avg_neg;
+
+        return result;
+    }
+
+    //9
+    public static String taskNinth() {
+        System.out.println("9. Работа с массивом. [15,10,51,-6,-5,3,-10,-34,0,32,56,-12,24,-52]. Переставить элементы массива в обратном порядке. Вывести результат в консоль");
+        int[] inputArray = {15, 10, 51, -6, -5, 3, -10, -34, 0, 32, 56, -12, 24, -52};
+        int buff;
+        for (int i = 0; i < inputArray.length; i++) {
+            buff = inputArray[i];
+            inputArray[i] = inputArray[inputArray.length - i - 1];
+            inputArray[inputArray.length - i - 1] = buff;
+            if (i == inputArray.length / 2) {
+                break;
+            }
+        }
+
+        return Arrays.toString(inputArray);
     }
 
 }
