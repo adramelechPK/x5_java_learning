@@ -12,14 +12,11 @@ public class HomeTask {
         //2
         System.out.println("Ответ: " + taskSecond(input));
 
+        //3
+        System.out.println("Ответ: " + taskThird(input));
 
 
         /*
-        //2
-        System.out.println("2. Ввести целое трехзначное число в консоли и найти сумму цифр этого трехзначного числа");
-        System.out.print("Введите число и нажмите [Enter]: ");
-        num = input.nextInt();
-        System.out.println("Ответ: " + (num / 100 + num % 100 / 10 + num % 10));
 
         //3
         System.out.println("3. Ввести целое число в консоли. Если оно является положительным, то прибавить к нему 1, в противном случае не изменять его. Вывести полученное число.");
@@ -193,12 +190,23 @@ public class HomeTask {
     public static int taskSecond(Scanner input) {
         System.out.println("2. Ввести целое трехзначное число в консоли и найти сумму цифр этого трехзначного числа");
         System.out.print("Введите число и нажмите [Enter]: ");
-        int sum = 0, num = input.nextInt();
+        int sum = 0, num = Math.abs(input.nextInt());
         while (num != 0) {
             sum += num % 10;
             num /= 10;
         }
         return sum;
+    }
+
+    //3
+    public static int taskThird(Scanner input) {
+        System.out.println("3. Ввести целое число в консоли. Если оно является положительным, то прибавить к нему 1, в противном случае не изменять его. Вывести полученное число.");
+        System.out.print("Введите число и нажмите [Enter]: ");
+        int num = input.nextInt();
+        if (num >= 0) {
+            num++;
+        }
+        return num;
     }
 
 }
