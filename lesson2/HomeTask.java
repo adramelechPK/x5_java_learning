@@ -2,16 +2,19 @@ package lesson2;
 
 import java.util.Scanner;
 
-public class Home_task {
+public class HomeTask {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
         //1
-        System.out.println("1. Ввести целое число в консоли и вывести на экран последнюю цифру введенного числа.");
-        System.out.print("Введите число и нажмите [Enter]: ");
-        Scanner input = new Scanner(System.in);
-        int num = input.nextInt();
-        System.out.println("Ответ: " + (num % 10));
+        System.out.println("Ответ: " + taskFirst(input));
 
+        //2
+        System.out.println("Ответ: " + taskSecond(input));
+
+
+
+        /*
         //2
         System.out.println("2. Ввести целое трехзначное число в консоли и найти сумму цифр этого трехзначного числа");
         System.out.print("Введите число и нажмите [Enter]: ");
@@ -33,7 +36,7 @@ public class Home_task {
         num = input.nextInt();
         if (num == 0) {
             num = 10;
-        } else if (num >0) {
+        } else if (num > 0) {
             num++;
         } else {
             num -= 2;
@@ -49,7 +52,7 @@ public class Home_task {
         System.out.print("Введите 3е число и нажмите [Enter]: ");
         int num2 = input.nextInt();
         int temp;
-        if (num <= num1 && num <= num2 ) {
+        if (num <= num1 && num <= num2) {
             temp = num;
         } else if (num1 <= num2) {
             temp = num1;
@@ -64,13 +67,13 @@ public class Home_task {
         num = input.nextInt();
         String temp_str = "";
 
-        if ( num % 2 == 0) {
+        if (num % 2 == 0) {
             temp_str = "четное";
         } else {
             temp_str = "нечетное";
         }
 
-        if (num == 0 ) {
+        if (num == 0) {
             temp_str = "нулевое";
         } else if (num > 0) {
             temp_str = "положительное " + temp_str;
@@ -84,22 +87,22 @@ public class Home_task {
         System.out.print("Введите код города и нажмите [Enter]: ");
         num = input.nextInt();
         double min_cost;
-        switch (num){
+        switch (num) {
             case 905: //Москва 4.15
                 min_cost = 4.15;
-                System.out.println("Москва. Стоимость разговора: " + min_cost*10);
+                System.out.println("Москва. Стоимость разговора: " + min_cost * 10);
                 break;
             case 194: //Ростов 1.94
                 min_cost = 1.94;
-                System.out.println("Ростов. Стоимость разговора: " + min_cost*10);
+                System.out.println("Ростов. Стоимость разговора: " + min_cost * 10);
                 break;
             case 491: //Краснодар 2.69
                 min_cost = 2.69;
-                System.out.println("Краснодар. Стоимость разговора: " + min_cost*10);
+                System.out.println("Краснодар. Стоимость разговора: " + min_cost * 10);
                 break;
             case 800: //Киров 5.00
                 min_cost = 5.00;
-                System.out.println("Киров. Стоимость разговора: " + min_cost*10);
+                System.out.println("Киров. Стоимость разговора: " + min_cost * 10);
                 break;
             default:
                 System.out.println("Неизвестный код города");
@@ -107,10 +110,10 @@ public class Home_task {
 
         //8
         System.out.println("8. Работа с массивом [1,-10,5,6,45,23,-45,-34,0,32,56,-1,2,-2]. (максимальное | сумму положительных | сумму четных отрицательных | количество положительных | avg отрицательных");
-        int[] arr8 = {1,-10,5,6,45,23,-45,-34,0,32,56,-1,2,-2};
+        int[] arr8 = {1, -10, 5, 6, 45, 23, -45, -34, 0, 32, 56, -1, 2, -2};
         int max = arr8[0], sum_pos = 0, sum_even_neg = 0, num_pos = 0, num_neg = 0;
         double avg_neg = 0;
-        for (int a:arr8 ) {
+        for (int a : arr8) {
             if (a > max) {
                 max = a;
             }
@@ -121,7 +124,7 @@ public class Home_task {
                 num_neg++;
                 avg_neg += a;
             }
-            if ( a < 0 && a % 2 == 0) {
+            if (a < 0 && a % 2 == 0) {
                 sum_even_neg += a;
             }
 
@@ -137,9 +140,9 @@ public class Home_task {
 
         //9
         System.out.println("9. Работа с массивом. [15,10,51,-6,-5,3,-10,-34,0,32,56,-12,24,-52]. Переставить элементы массива в обратном порядке. Вывести результат в консоль");
-        int[] arr9 = {15,10,51,-6,-5,3,-10,-34,0,32,56,-12,24,-52};
+        int[] arr9 = {15, 10, 51, -6, -5, 3, -10, -34, 0, 32, 56, -12, 24, -52};
         int buff;
-        for (int i=0; i < arr9.length; i++) {
+        for (int i = 0; i < arr9.length; i++) {
             buff = arr9[i];
             arr9[i] = arr9[arr9.length - i - 1];
             arr9[arr9.length - i - 1] = buff;
@@ -148,31 +151,54 @@ public class Home_task {
             }
         }
         System.out.print("Массив наоборот: ");
-        for (int a:arr9) {
+        for (int a : arr9) {
             System.out.print(a + " ");
         }
         System.out.println("");
 
         //10
         System.out.println("10. Работа с массивом. [15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52]. Переместить нули в конец массива. Вывести результат в консоль");
-        int[] arr10 = {15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52};
+        int[] arr10 = {15, 10, 0, -6, -5, 3, 0, -34, 0, 32, 56, 0, 24, -52};
         int[] temp_arr = new int[arr10.length];
-        int index = arr10.length,z = 0,y = 1;
-        for (int i=0; i < arr10.length; i++) {
+        int index = arr10.length, z = 0, y = 1;
+        for (int i = 0; i < arr10.length; i++) {
             if (arr10[i] != 0) {
                 temp_arr[z] = arr10[i];
                 z++;
             } else {
-                temp_arr[arr10.length-y] = 0;
+                temp_arr[arr10.length - y] = 0;
                 y++;
             }
         }
 
         System.out.print("Ответ: ");
-        for (int a:temp_arr) {
+        for (int a : temp_arr) {
             System.out.print(a + " ");
         }
         System.out.println();
 
+        */
+
     }
+
+    //1
+    public static int taskFirst(Scanner input) {
+        System.out.println("1. Ввести целое число в консоли и вывести на экран последнюю цифру введенного числа.");
+        System.out.print("Введите число и нажмите [Enter]: ");
+        int num = input.nextInt();
+        return num % 10;
+    }
+
+    //2
+    public static int taskSecond(Scanner input) {
+        System.out.println("2. Ввести целое трехзначное число в консоли и найти сумму цифр этого трехзначного числа");
+        System.out.print("Введите число и нажмите [Enter]: ");
+        int sum = 0, num = input.nextInt();
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum;
+    }
+
 }
