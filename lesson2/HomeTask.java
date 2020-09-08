@@ -7,56 +7,22 @@ public class HomeTask {
         Scanner input = new Scanner(System.in);
 
         //1
-        System.out.println("Ответ: " + taskFirst(input));
+        //System.out.println("Ответ: " + taskFirst(input));
 
         //2
-        System.out.println("Ответ: " + taskSecond(input));
+        //System.out.println("Ответ: " + taskSecond(input));
 
         //3
-        System.out.println("Ответ: " + taskThird(input));
+        //System.out.println("Ответ: " + taskThird(input));
+
+        //4
+        //System.out.println("Ответ: " + taskFourth(input));
+
+        //5
+        System.out.println("Ответ: " + taskFifth(input));
 
 
         /*
-
-        //3
-        System.out.println("3. Ввести целое число в консоли. Если оно является положительным, то прибавить к нему 1, в противном случае не изменять его. Вывести полученное число.");
-        System.out.print("Введите число и нажмите [Enter]: ");
-        num = input.nextInt();
-        if (num >= 0) {
-            num++;
-        }
-        System.out.println("Ответ: " + num);
-
-        //4
-        System.out.println("4. Ввести целое число в консоли. Если оно является положительным, то прибавить к нему 1; если отрицательным, то вычесть из него 2; если нулевым то заменить его на 10. Вывести полученное число.");
-        System.out.print("Введите число и нажмите [Enter]: ");
-        num = input.nextInt();
-        if (num == 0) {
-            num = 10;
-        } else if (num > 0) {
-            num++;
-        } else {
-            num -= 2;
-        }
-        System.out.println("Ответ: " + num);
-
-        //5
-        System.out.println("5. Ввести три целых числа с консоли. Вывести на экран наименьшее из них.");
-        System.out.print("Введите 1е число и нажмите [Enter]: ");
-        num = input.nextInt();
-        System.out.print("Введите 2е число и нажмите [Enter]: ");
-        int num1 = input.nextInt();
-        System.out.print("Введите 3е число и нажмите [Enter]: ");
-        int num2 = input.nextInt();
-        int temp;
-        if (num <= num1 && num <= num2) {
-            temp = num;
-        } else if (num1 <= num2) {
-            temp = num1;
-        } else {
-            temp = num2;
-        }
-        System.out.println("Ответ: " + temp);
 
         //6
         System.out.println("6. Ввести целое число в консоли. Вывести его строку-описание вида «отрицательное четное число», «нулевое число», «положительное нечетное число» и т. д.");
@@ -207,6 +173,39 @@ public class HomeTask {
             num++;
         }
         return num;
+    }
+
+    //4
+    public static int taskFourth(Scanner input) {
+        System.out.println("4. Ввести целое число в консоли. Если оно является положительным, то прибавить к нему 1; если отрицательным, то вычесть из него 2; если нулевым то заменить его на 10. Вывести полученное число.");
+        System.out.print("Введите число и нажмите [Enter]: ");
+        int num = input.nextInt();
+        if (num == 0) {
+            num = 10;
+        } else if (num > 0) {
+            num++;
+        } else {
+            num -= 2;
+        }
+        return num;
+    }
+
+    //5
+    public static int taskFifth(Scanner input) {
+        System.out.println("5. Ввести три целых числа с консоли. Вывести на экран наименьшее из них.");
+        int[] arr = new int[3];
+        int num;
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Введите " + (i + 1) + "е число и нажмите [Enter]: ");
+            arr[i] = input.nextInt();
+        }
+        if (arr[0] <= arr[1] && arr[0] <= arr[2]) {
+            return arr[0];
+        } else if (arr[1] <= arr[2]) {
+            return arr[1];
+        } else {
+            return arr[2];
+        }
     }
 
 }
