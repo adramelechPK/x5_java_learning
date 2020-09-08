@@ -19,31 +19,13 @@ public class HomeTask {
         //System.out.println("Ответ: " + taskFourth(input));
 
         //5
-        System.out.println("Ответ: " + taskFifth(input));
+        //System.out.println("Ответ: " + taskFifth(input));
+
+        //6
+        System.out.println("Ответ: " + taskSixth(input));
 
 
         /*
-
-        //6
-        System.out.println("6. Ввести целое число в консоли. Вывести его строку-описание вида «отрицательное четное число», «нулевое число», «положительное нечетное число» и т. д.");
-        System.out.print("Введите число и нажмите [Enter]: ");
-        num = input.nextInt();
-        String temp_str = "";
-
-        if (num % 2 == 0) {
-            temp_str = "четное";
-        } else {
-            temp_str = "нечетное";
-        }
-
-        if (num == 0) {
-            temp_str = "нулевое";
-        } else if (num > 0) {
-            temp_str = "положительное " + temp_str;
-        } else {
-            temp_str = "отрицательное " + temp_str;
-        }
-        System.out.println("Ответ: " + num + " - " + temp_str + " число");
 
         //7
         System.out.println("7. Написать программу, вычисляющую стоимость 10 минутного междугороднего разговора в зависимости от кода города.");
@@ -194,18 +176,43 @@ public class HomeTask {
     public static int taskFifth(Scanner input) {
         System.out.println("5. Ввести три целых числа с консоли. Вывести на экран наименьшее из них.");
         int[] arr = new int[3];
-        int num;
-        for (int i = 0; i < 3; i++) {
+        int num, result = 0;
+        for (int i = 0; i < arr.length; i++) {
             System.out.print("Введите " + (i + 1) + "е число и нажмите [Enter]: ");
             arr[i] = input.nextInt();
         }
-        if (arr[0] <= arr[1] && arr[0] <= arr[2]) {
-            return arr[0];
-        } else if (arr[1] <= arr[2]) {
-            return arr[1];
-        } else {
-            return arr[2];
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                result = arr[i];
+            } else {
+                result = arr[i + 1];
+            }
         }
+        return result;
+    }
+
+    //6
+    public static String taskSixth(Scanner input) {
+        System.out.println("6. Ввести целое число в консоли. Вывести его строку-описание вида «отрицательное четное число», «нулевое число», «положительное нечетное число» и т. д.");
+        System.out.print("Введите число и нажмите [Enter]: ");
+        int num = input.nextInt();
+        String result = "";
+
+        if (num % 2 == 0) {
+            result = "четное";
+        } else {
+            result = "нечетное";
+        }
+
+        if (num == 0) {
+            result = "нулевое";
+        } else if (num > 0) {
+            result = "положительное " + result;
+        } else {
+            result = "отрицательное " + result;
+        }
+        result = num + " - " + result + " число";
+        return result;
     }
 
 }
