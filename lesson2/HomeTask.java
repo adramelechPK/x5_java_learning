@@ -155,8 +155,9 @@ public class HomeTask {
 
     //8
     public static String taskEighth() {
-        System.out.println("8. Работа с массивом [1,-10,5,6,45,23,-45,-34,0,32,56,-1,2,-2]. (максимальное | сумму положительных | сумму четных отрицательных | количество положительных | avg отрицательных");
         int[] inputArray = {1, -10, 5, 6, 45, 23, -45, -34, 0, 32, 56, -1, 2, -2};
+        System.out.println("8. Работа с массивом " + Arrays.toString(inputArray) + " (максимальное | сумму положительных | сумму четных отрицательных | количество положительных | avg отрицательных");
+
         int max = inputArray[0], sum_pos = 0, sum_even_neg = 0, num_pos = 0, num_neg = 0;
         double avg_neg = 0;
         String result = "\n";
@@ -188,8 +189,9 @@ public class HomeTask {
 
     //9
     public static String taskNinth() {
-        System.out.println("9. Работа с массивом. [15,10,51,-6,-5,3,-10,-34,0,32,56,-12,24,-52]. Переставить элементы массива в обратном порядке. Вывести результат в консоль");
         int[] inputArray = {15, 10, 51, -6, -5, 3, -10, -34, 0, 32, 56, -12, 24, -52};
+        System.out.println("9. Работа с массивом. " + Arrays.toString(inputArray) + ". Переставить элементы массива в обратном порядке. Вывести результат в консоль");
+
         int buff;
         for (int i = 0; i < inputArray.length; i++) {
             buff = inputArray[i];
@@ -205,8 +207,9 @@ public class HomeTask {
 
     //10
     public static String taskTenth() {
-        System.out.println("10. Работа с массивом. [15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52]. Переместить нули в конец массива. Вывести результат в консоль");
         int[] inputArray = {15, 10, 0, -6, -5, 3, 0, -34, 0, 32, 56, 0, 24, -52};
+        System.out.println("10. Работа с массивом. " + Arrays.toString(inputArray) + ". Переместить нули в конец массива. Вывести результат в консоль");
+
         int[] outputArray = new int[inputArray.length];
         int z = 0, y = 1;
         for (int a : inputArray) {
