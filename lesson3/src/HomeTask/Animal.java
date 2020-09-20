@@ -1,7 +1,7 @@
 package HomeTask;
 
 public class Animal {
-    String food = "food", location = "planet Earth", animal;
+    String food = "food", location = "planet Earth", название;
 
     public void makeNoise() {
         System.out.println("Наше животное спит");

@@ -3,6 +3,8 @@ package HomeTask;
 public class Main {
     public static void main(String[] args) {
         taskPhone();
+
+        taskAnimal();
     }
 
     public static void taskPhone() {
@@ -24,6 +26,16 @@ public class Main {
         lg.receiveCall("Мыкола");
         lg.receiveCall("Мыкола", 666666);
 
-        xiaomi.sendMessage(66666,54545,345345);
+        xiaomi.sendMessage(66666, 54545, 345345);
+    }
+
+    public static void taskAnimal() {
+        Animal[] animals = {new Dog("Шарик", "всё, что плохо лежит", "будка"),
+                new Horse("Маруся", "овес", "поле"),
+                new Horse("Пушок", "твоя пятка", "находится в суперпозиции")};
+
+        for (Animal животина : animals) {
+            Ветеринар.treatAnimal(животина);
+        }
     }
 }
