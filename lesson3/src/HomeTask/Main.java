@@ -32,7 +32,7 @@ public class Main {
     public static void taskAnimal() {
         Animal[] animals = {new Dog("Шарик", "всё, что плохо лежит", "будка"),
                 new Horse("Маруся", "овес", "поле"),
-                new Horse("Пушок", "твоя пятка", "находится в суперпозиции")};
+                new Cat("Пушок", "твоя пятка", "находится в суперпозиции")};
 
         for (Animal животина : animals) {
             Ветеринар.treatAnimal(животина);
