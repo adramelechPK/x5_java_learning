@@ -1,3 +1,5 @@
+package HomeTask;
+
 public abstract class Car {
     String mark, klass;
     int weight;

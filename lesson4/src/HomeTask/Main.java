@@ -1,3 +1,5 @@
+package HomeTask;
+
 public class Main {
     public static void main(String[] args) {
         homeTask1();

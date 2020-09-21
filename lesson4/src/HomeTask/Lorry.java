@@ -1,20 +1,22 @@
-public class SportCar extends Car {
-    private final String NAME = "Блестящая быстрая машина (красненькая)";
-    int maxSpeed;
+package HomeTask;
 
-    public SportCar(String mark, int weight, int maxSpeed) {
+public class Lorry extends Car {
+    private final String NAME = "Грузовик";
+    int weightOnBoard;
+
+    public Lorry(String mark, int weight, int weightOnBoard) {
         super(mark, weight);
-        this.maxSpeed = maxSpeed;
+        this.weightOnBoard = weightOnBoard;
     }
 
     @Override
     public String start() {
-        return NAME + " поехала";
+        return NAME + " поехал";
     }
 
     @Override
     public String stop() {
-        return NAME + " остановилась";
+        return NAME + " остановился";
     }
 
     @Override
@@ -24,15 +26,15 @@ public class SportCar extends Car {
         System.out.println("Вес авто: " + super.getWeight());
         System.out.println("Производитель двигателя: " + motor.getVendor());
         System.out.println("Мощность двигателя: " + motor.getCapacity());
-        System.out.println("Особенность: большая максимальная скорость (" + getMaxSpeed() + " км/ч)");
+        System.out.println("Особенность: большая грузоподъемность (" + getWeightOnBoard() + " кг)");
     }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
+    public int getWeightOnBoard() {
+        return weightOnBoard;
     }
 
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public void setWeightOnBoard(int weightOnBoard) {
+        this.weightOnBoard = weightOnBoard;
     }
 
     public String getNAME() {
