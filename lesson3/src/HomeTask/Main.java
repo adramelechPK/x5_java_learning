@@ -5,6 +5,8 @@ public class Main {
         taskPhone();
 
         taskAnimal();
+
+        taskStudent();
     }
 
     public static void taskPhone() {
@@ -38,4 +40,22 @@ public class Main {
             Ветеринар.treatAnimal(животина);
         }
     }
+
+    public static void taskStudent() {
+        Student student1 = new Aspirant("Иван",
+                "Петров",
+                "Философия свеклы",
+                4.5,
+                "Влияние лунных затмений на посевы сахарной свеклы");
+        Student student2 = new Student("Петр",
+                "Иванов",
+                "Философия свеклы",
+                5);
+        Student[] students = {student1, student2};
+
+        for (Student student: students) {
+            System.out.println(student.getScholarship());
+        }
+    }
+
 }
