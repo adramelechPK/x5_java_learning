@@ -1,8 +1,8 @@
 public class HardDiskBuilder {
-    private String vendor = "unknown";
-    private int size = 512;
-    private HardDiskType hardDiskType = HardDiskType.HDD;
-    private double formFactor = 3.5;
+    private String vendor;
+    private int size;
+    private HardDiskType hardDiskType;
+    private double formFactor;
 
     public HardDiskBuilder withVendor(String vendor){
         this.vendor = vendor;

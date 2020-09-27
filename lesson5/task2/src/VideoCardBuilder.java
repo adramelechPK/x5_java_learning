@@ -1,8 +1,8 @@
 public class VideoCardBuilder {
-    private String vendor = "unknown";
-    private VideoCardType videoCardType = VideoCardType.GDDR4;
-    private int size = 4096;
-    private VideoCardCoolingType videoCardCoolingType = VideoCardCoolingType.ACTIVE;
+    private String vendor;
+    private VideoCardType videoCardType;
+    private int size;
+    private VideoCardCoolingType videoCardCoolingType;
 
     public VideoCardBuilder withVendor(String vendor){
         this.vendor = vendor;

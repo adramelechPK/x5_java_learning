@@ -1,8 +1,8 @@
 public class CpuBuilder {
-    private double clockFrequency = 1000;
-    private byte coresQuantity = 1;
-    private int cacheMemory = 512;
-    private String title = "untitle", vendor = "unknown";
+    private double clockFrequency;
+    private byte coresQuantity;
+    private int cacheMemory;
+    private String title, vendor;
 
     public CpuBuilder withTitle(String title){
         this.title = title;

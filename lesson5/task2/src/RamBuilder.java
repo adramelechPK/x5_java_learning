@@ -1,8 +1,8 @@
 public class RamBuilder {
-    private String vendor = "unknown";
-    private int size = 2;
-    private double frequency = 1333;
-    private RamType ramType = RamType.DDR2;
+    private String vendor;
+    private int size;
+    private double frequency;
+    private RamType ramType;
 
     public RamBuilder withVendor(String vendor){
         this.vendor = vendor;

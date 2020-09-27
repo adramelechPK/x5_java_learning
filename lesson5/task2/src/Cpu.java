@@ -12,6 +12,37 @@ public class Cpu {
         this.vendor = vendor;
     }
 
+    public boolean checkCpuForm() {
+        boolean flag = true;
+        String notice = "CPU fields are empty: ";
+        if (clockFrequency == 0) {
+            notice += "clockFrequency; ";
+            flag = false;
+        }
+
+        if (coresQuantity == 0) {
+            notice += "coresQuantity; ";
+            flag = false;
+        }
+
+        if (cacheMemory == 0 ) {
+            notice += "cacheMemory; ";
+            flag = false;
+        }
+
+        if (title == null ) {
+            notice += "title; ";
+            flag = false;
+        }
+
+        if (vendor == null ) {
+            notice += "vendor; ";
+            flag = false;
+        }
+        System.out.println(notice);
+        return flag;
+    }
+
     @Override
     public String toString() {
         return "CPU{" + vendor + "/" +
