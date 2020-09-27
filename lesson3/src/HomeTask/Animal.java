@@ -1,5 +1,7 @@
 package HomeTask;
 
+import sun.security.mscapi.CPublicKey;
+
 public class Animal {
     String food = "food", location = "planet Earth", название;
 
